@@ -1,6 +1,6 @@
 # SendVerifyApi.AccountvalidationApi
 
-All URIs are relative to *https://api.sendverify.io/api/v1*
+All URIs are relative to *http://127.0.0.1:8083/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
