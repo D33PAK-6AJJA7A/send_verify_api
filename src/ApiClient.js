@@ -46,9 +46,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://127.0.0.1:8083/api/v1
+     * @default https://api.sendverify.io/api/v1
      */
-    this.basePath = 'http://127.0.0.1:8083/api/v1'.replace(/\/+$/, '');
+    this.basePath = 'https://api.sendverify.io/api/v1'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
