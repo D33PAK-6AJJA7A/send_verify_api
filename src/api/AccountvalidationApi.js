@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsBulkResponse', 'model/ModelsCleanedList', 'model/ModelsCountStat', 'model/ModelsEmailList', 'model/ModelsListCleaningJob'], factory);
+    define(['ApiClient', 'model/ModelsBulkResponse', 'model/ModelsCleanedList', 'model/ModelsCountStat', 'model/ModelsCreditsInfo', 'model/ModelsEmailList', 'model/ModelsListCleaningJob'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ModelsBulkResponse'), require('../model/ModelsCleanedList'), require('../model/ModelsCountStat'), require('../model/ModelsEmailList'), require('../model/ModelsListCleaningJob'));
+    module.exports = factory(require('../ApiClient'), require('../model/ModelsBulkResponse'), require('../model/ModelsCleanedList'), require('../model/ModelsCountStat'), require('../model/ModelsCreditsInfo'), require('../model/ModelsEmailList'), require('../model/ModelsListCleaningJob'));
   } else {
     // Browser globals (root is window)
     if (!root.SendVerifyApi) {
       root.SendVerifyApi = {};
     }
-    root.SendVerifyApi.AccountvalidationApi = factory(root.SendVerifyApi.ApiClient, root.SendVerifyApi.ModelsBulkResponse, root.SendVerifyApi.ModelsCleanedList, root.SendVerifyApi.ModelsCountStat, root.SendVerifyApi.ModelsEmailList, root.SendVerifyApi.ModelsListCleaningJob);
+    root.SendVerifyApi.AccountvalidationApi = factory(root.SendVerifyApi.ApiClient, root.SendVerifyApi.ModelsBulkResponse, root.SendVerifyApi.ModelsCleanedList, root.SendVerifyApi.ModelsCountStat, root.SendVerifyApi.ModelsCreditsInfo, root.SendVerifyApi.ModelsEmailList, root.SendVerifyApi.ModelsListCleaningJob);
   }
-}(this, function(ApiClient, ModelsBulkResponse, ModelsCleanedList, ModelsCountStat, ModelsEmailList, ModelsListCleaningJob) {
+}(this, function(ApiClient, ModelsBulkResponse, ModelsCleanedList, ModelsCountStat, ModelsCreditsInfo, ModelsEmailList, ModelsListCleaningJob) {
   'use strict';
 
   /**
@@ -89,6 +89,58 @@
 
       return this.apiClient.callApi(
         '/account/validation/count', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the validationRouterDeductCredits operation.
+     * @callback module:api/AccountvalidationApi~validationRouterDeductCreditsCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deduct Credits <br>
+     * @param {String} xSendPostSubAccountApiKey Account API Key
+     * @param {module:model/ModelsCreditsInfo} body Used Credits Info
+     * @param {module:api/AccountvalidationApi~validationRouterDeductCreditsCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.validationRouterDeductCredits = function(xSendPostSubAccountApiKey, body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'xSendPostSubAccountApiKey' is set
+      if (xSendPostSubAccountApiKey === undefined || xSendPostSubAccountApiKey === null) {
+        throw new Error("Missing the required parameter 'xSendPostSubAccountApiKey' when calling validationRouterDeductCredits");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling validationRouterDeductCredits");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'X-SendPost-SubAccount-ApiKey': xSendPostSubAccountApiKey
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/account/validation/deduct', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

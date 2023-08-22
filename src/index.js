@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsAccount', 'model/ModelsAuthInfo', 'model/ModelsBillingPortalSession', 'model/ModelsBulkResponse', 'model/ModelsCleanedList', 'model/ModelsCountStat', 'model/ModelsCountry', 'model/ModelsCoupon', 'model/ModelsCouponOptions', 'model/ModelsEAccount', 'model/ModelsEAccountMember', 'model/ModelsEmailList', 'model/ModelsJobStatus', 'model/ModelsListCleaningJob', 'model/ModelsMember', 'model/ModelsPaymentAddress', 'model/ModelsPaymentOptions', 'model/ModelsPaymentStatus', 'model/ModelsPricing', 'model/ModelsSingleCleanedMail', 'model/ModelsTaxDetails', 'model/ModelsValidationReason', 'api/AccountpaymentApi', 'api/AccountsettingApi', 'api/AccountvalidationApi', 'api/AuthApi', 'api/ClusterApi'], factory);
+    define(['ApiClient', 'model/ModelsAccount', 'model/ModelsAuthInfo', 'model/ModelsBillingPortalSession', 'model/ModelsBulkResponse', 'model/ModelsCleanedList', 'model/ModelsCountStat', 'model/ModelsCountry', 'model/ModelsCoupon', 'model/ModelsCouponOptions', 'model/ModelsCreditsInfo', 'model/ModelsEAccount', 'model/ModelsEAccountMember', 'model/ModelsEmailList', 'model/ModelsJobStatus', 'model/ModelsListCleaningJob', 'model/ModelsMember', 'model/ModelsPaymentAddress', 'model/ModelsPaymentOptions', 'model/ModelsPaymentStatus', 'model/ModelsPricing', 'model/ModelsSingleCleanedMail', 'model/ModelsTaxDetails', 'model/ModelsValidationReason', 'api/AccountpaymentApi', 'api/AccountsettingApi', 'api/AccountvalidationApi', 'api/AuthApi', 'api/ClusterApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ModelsAccount'), require('./model/ModelsAuthInfo'), require('./model/ModelsBillingPortalSession'), require('./model/ModelsBulkResponse'), require('./model/ModelsCleanedList'), require('./model/ModelsCountStat'), require('./model/ModelsCountry'), require('./model/ModelsCoupon'), require('./model/ModelsCouponOptions'), require('./model/ModelsEAccount'), require('./model/ModelsEAccountMember'), require('./model/ModelsEmailList'), require('./model/ModelsJobStatus'), require('./model/ModelsListCleaningJob'), require('./model/ModelsMember'), require('./model/ModelsPaymentAddress'), require('./model/ModelsPaymentOptions'), require('./model/ModelsPaymentStatus'), require('./model/ModelsPricing'), require('./model/ModelsSingleCleanedMail'), require('./model/ModelsTaxDetails'), require('./model/ModelsValidationReason'), require('./api/AccountpaymentApi'), require('./api/AccountsettingApi'), require('./api/AccountvalidationApi'), require('./api/AuthApi'), require('./api/ClusterApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ModelsAccount'), require('./model/ModelsAuthInfo'), require('./model/ModelsBillingPortalSession'), require('./model/ModelsBulkResponse'), require('./model/ModelsCleanedList'), require('./model/ModelsCountStat'), require('./model/ModelsCountry'), require('./model/ModelsCoupon'), require('./model/ModelsCouponOptions'), require('./model/ModelsCreditsInfo'), require('./model/ModelsEAccount'), require('./model/ModelsEAccountMember'), require('./model/ModelsEmailList'), require('./model/ModelsJobStatus'), require('./model/ModelsListCleaningJob'), require('./model/ModelsMember'), require('./model/ModelsPaymentAddress'), require('./model/ModelsPaymentOptions'), require('./model/ModelsPaymentStatus'), require('./model/ModelsPricing'), require('./model/ModelsSingleCleanedMail'), require('./model/ModelsTaxDetails'), require('./model/ModelsValidationReason'), require('./api/AccountpaymentApi'), require('./api/AccountsettingApi'), require('./api/AccountvalidationApi'), require('./api/AuthApi'), require('./api/ClusterApi'));
   }
-}(function(ApiClient, ModelsAccount, ModelsAuthInfo, ModelsBillingPortalSession, ModelsBulkResponse, ModelsCleanedList, ModelsCountStat, ModelsCountry, ModelsCoupon, ModelsCouponOptions, ModelsEAccount, ModelsEAccountMember, ModelsEmailList, ModelsJobStatus, ModelsListCleaningJob, ModelsMember, ModelsPaymentAddress, ModelsPaymentOptions, ModelsPaymentStatus, ModelsPricing, ModelsSingleCleanedMail, ModelsTaxDetails, ModelsValidationReason, AccountpaymentApi, AccountsettingApi, AccountvalidationApi, AuthApi, ClusterApi) {
+}(function(ApiClient, ModelsAccount, ModelsAuthInfo, ModelsBillingPortalSession, ModelsBulkResponse, ModelsCleanedList, ModelsCountStat, ModelsCountry, ModelsCoupon, ModelsCouponOptions, ModelsCreditsInfo, ModelsEAccount, ModelsEAccountMember, ModelsEmailList, ModelsJobStatus, ModelsListCleaningJob, ModelsMember, ModelsPaymentAddress, ModelsPaymentOptions, ModelsPaymentStatus, ModelsPricing, ModelsSingleCleanedMail, ModelsTaxDetails, ModelsValidationReason, AccountpaymentApi, AccountsettingApi, AccountvalidationApi, AuthApi, ClusterApi) {
   'use strict';
 
   /**
@@ -106,6 +106,11 @@
      * @property {module:model/ModelsCouponOptions}
      */
     ModelsCouponOptions: ModelsCouponOptions,
+    /**
+     * The ModelsCreditsInfo model constructor.
+     * @property {module:model/ModelsCreditsInfo}
+     */
+    ModelsCreditsInfo: ModelsCreditsInfo,
     /**
      * The ModelsEAccount model constructor.
      * @property {module:model/ModelsEAccount}
