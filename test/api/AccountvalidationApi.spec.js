@@ -58,6 +58,27 @@
           done();
         });
       });
+      describe('validationRouterDeductCredits', function() {
+        it('should call validationRouterDeductCredits successfully', function(done) {
+          // TODO: uncomment, update parameter values for validationRouterDeductCredits call
+          /*
+          var xSendPostSubAccountApiKey = "xSendPostSubAccountApiKey_example";
+          var body = new SendVerifyApi.ModelsCreditsInfo();
+          body.usedCredits = "0";
+
+          instance.validationRouterDeductCredits(xSendPostSubAccountApiKey, body, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
       describe('validationRouterGetAll', function() {
         it('should call validationRouterGetAll successfully', function(done) {
           // TODO: uncomment, update parameter values for validationRouterGetAll call and complete the assertions
