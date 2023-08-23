@@ -5,6 +5,7 @@ All URIs are relative to *https://api.sendverify.io/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**validationRouterCount**](AccountvalidationApi.md#validationRouterCount) | **GET** /account/validation/count | 
+[**validationRouterDeductCredits**](AccountvalidationApi.md#validationRouterDeductCredits) | **POST** /account/validation/deduct | 
 [**validationRouterGetAll**](AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
 [**validationRouterValidateEmailBulk**](AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
 [**validationRouterValidateEmailList**](AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
@@ -46,6 +47,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsCountStat**](ModelsCountStat.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="validationRouterDeductCredits"></a>
+# **validationRouterDeductCredits**
+> validationRouterDeductCredits(xSendPostSubAccountApiKey, body)
+
+
+
+Deduct Credits <br>
+
+### Example
+```javascript
+var SendVerifyApi = require('send_verify_api');
+
+var apiInstance = new SendVerifyApi.AccountvalidationApi();
+
+var xSendPostSubAccountApiKey = "xSendPostSubAccountApiKey_example"; // String | Account API Key
+
+var body = new SendVerifyApi.ModelsCreditsInfo(); // ModelsCreditsInfo | Used Credits Info
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.validationRouterDeductCredits(xSendPostSubAccountApiKey, body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xSendPostSubAccountApiKey** | **String**| Account API Key | 
+ **body** | [**ModelsCreditsInfo**](ModelsCreditsInfo.md)| Used Credits Info | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

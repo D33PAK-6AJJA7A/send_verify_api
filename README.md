@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterHandlePaymentWebhook**](docs/AccountpaymentApi.md#paymentRouterHandlePaymentWebhook) | **POST** /account/payment/webhook | 
 *SendVerifyApi.AccountsettingApi* | [**accountSettingRouterGetAccount**](docs/AccountsettingApi.md#accountSettingRouterGetAccount) | **GET** /account/setting/ | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterCount**](docs/AccountvalidationApi.md#validationRouterCount) | **GET** /account/validation/count | 
+*SendVerifyApi.AccountvalidationApi* | [**validationRouterDeductCredits**](docs/AccountvalidationApi.md#validationRouterDeductCredits) | **POST** /account/validation/deduct | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterGetAll**](docs/AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailBulk**](docs/AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailList**](docs/AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
@@ -151,6 +152,7 @@ Class | Method | HTTP request | Description
  - [SendVerifyApi.ModelsCountry](docs/ModelsCountry.md)
  - [SendVerifyApi.ModelsCoupon](docs/ModelsCoupon.md)
  - [SendVerifyApi.ModelsCouponOptions](docs/ModelsCouponOptions.md)
+ - [SendVerifyApi.ModelsCreditsInfo](docs/ModelsCreditsInfo.md)
  - [SendVerifyApi.ModelsEAccount](docs/ModelsEAccount.md)
  - [SendVerifyApi.ModelsEAccountMember](docs/ModelsEAccountMember.md)
  - [SendVerifyApi.ModelsEmailList](docs/ModelsEmailList.md)
