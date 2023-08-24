@@ -95,21 +95,21 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var SendVerifyApi = require('send_verify_api');
 
-var api = new SendVerifyApi.AccountpaymentApi()
+var api = new SendVerifyApi.AccountmemberApi()
 
 var xAccountApiKey = "xAccountApiKey_example"; // {String} Account API Key
 
-var body = new SendVerifyApi.ModelsCouponOptions(); // {ModelsCouponOptions} Coupon Code Options
+var memberId = 789; // {Number} The MemberId you want to delete
 
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.paymentRouterApplyCouponToStripeCustomer(xAccountApiKey, body, callback);
+api.memberRouterDelete(xAccountApiKey, memberId, callback);
 
 ```
 
@@ -119,6 +119,9 @@ All URIs are relative to *https://api.sendverify.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*SendVerifyApi.AccountmemberApi* | [**memberRouterDelete**](docs/AccountmemberApi.md#memberRouterDelete) | **DELETE** /account/member/{memberId} | 
+*SendVerifyApi.AccountmemberApi* | [**memberRouterGet**](docs/AccountmemberApi.md#memberRouterGet) | **GET** /account/member/{memberId} | 
+*SendVerifyApi.AccountmemberApi* | [**memberRouterGetAll**](docs/AccountmemberApi.md#memberRouterGetAll) | **GET** /account/member/ | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterApplyCouponToStripeCustomer**](docs/AccountpaymentApi.md#paymentRouterApplyCouponToStripeCustomer) | **POST** /account/payment/customer/coupon | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterCreateCustomerPortal**](docs/AccountpaymentApi.md#paymentRouterCreateCustomerPortal) | **POST** /account/payment/portal | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterCreatePaymentInvoice**](docs/AccountpaymentApi.md#paymentRouterCreatePaymentInvoice) | **POST** /account/payment/invoice | 
@@ -153,6 +156,7 @@ Class | Method | HTTP request | Description
  - [SendVerifyApi.ModelsCoupon](docs/ModelsCoupon.md)
  - [SendVerifyApi.ModelsCouponOptions](docs/ModelsCouponOptions.md)
  - [SendVerifyApi.ModelsCreditsInfo](docs/ModelsCreditsInfo.md)
+ - [SendVerifyApi.ModelsDeleteResponse](docs/ModelsDeleteResponse.md)
  - [SendVerifyApi.ModelsEAccount](docs/ModelsEAccount.md)
  - [SendVerifyApi.ModelsEAccountMember](docs/ModelsEAccountMember.md)
  - [SendVerifyApi.ModelsEmailList](docs/ModelsEmailList.md)
