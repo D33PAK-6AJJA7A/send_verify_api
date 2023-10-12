@@ -16,62 +16,55 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ModelsValidationReason'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ModelsValidationReason'));
   } else {
     // Browser globals (root is window)
     if (!root.SendVerifyApi) {
       root.SendVerifyApi = {};
     }
-    root.SendVerifyApi.ModelsMember = factory(root.SendVerifyApi.ApiClient);
+    root.SendVerifyApi.ModelsSingleValidatedEmail = factory(root.SendVerifyApi.ApiClient, root.SendVerifyApi.ModelsValidationReason);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ModelsValidationReason) {
   'use strict';
 
   /**
-   * The ModelsMember model module.
-   * @module model/ModelsMember
+   * The ModelsSingleValidatedEmail model module.
+   * @module model/ModelsSingleValidatedEmail
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>ModelsMember</code>.
-   * @alias module:model/ModelsMember
+   * Constructs a new <code>ModelsSingleValidatedEmail</code>.
+   * @alias module:model/ModelsSingleValidatedEmail
    * @class
    */
   var exports = function() {
   };
 
   /**
-   * Constructs a <code>ModelsMember</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ModelsSingleValidatedEmail</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ModelsMember} obj Optional instance to populate.
-   * @return {module:model/ModelsMember} The populated <code>ModelsMember</code> instance.
+   * @param {module:model/ModelsSingleValidatedEmail} obj Optional instance to populate.
+   * @return {module:model/ModelsSingleValidatedEmail} The populated <code>ModelsSingleValidatedEmail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('created'))
-        obj.created = ApiClient.convertToType(data['created'], 'Number');
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('isVerified'))
-        obj.isVerified = ApiClient.convertToType(data['isVerified'], 'Boolean');
-      if (data.hasOwnProperty('name'))
-        obj.name = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('error'))
+        obj.error = ApiClient.convertToType(data['error'], 'String');
+      if (data.hasOwnProperty('reason'))
+        obj.reason = ModelsValidationReason.constructFromObject(data['reason']);
+      if (data.hasOwnProperty('valid'))
+        obj.valid = ApiClient.convertToType(data['valid'], 'Boolean');
     }
     return obj;
   }
-
-  /**
-   * @member {Number} created
-   */
-  exports.prototype.created = undefined;
 
   /**
    * @member {String} email
@@ -79,19 +72,19 @@
   exports.prototype.email = undefined;
 
   /**
-   * @member {Number} id
+   * @member {String} error
    */
-  exports.prototype.id = undefined;
+  exports.prototype.error = undefined;
 
   /**
-   * @member {Boolean} isVerified
+   * @member {module:model/ModelsValidationReason} reason
    */
-  exports.prototype.isVerified = undefined;
+  exports.prototype.reason = undefined;
 
   /**
-   * @member {String} name
+   * @member {Boolean} valid
    */
-  exports.prototype.name = undefined;
+  exports.prototype.valid = undefined;
 
 
   return exports;
