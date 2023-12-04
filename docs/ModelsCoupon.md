@@ -5,5 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** |  | [optional] 
 **percentage** | **Number** |  | [optional] 
+**promotionId** | **String** |  | [optional] 
 
 
