@@ -56,10 +56,10 @@
       obj = obj || new exports();
       if (data.hasOwnProperty('code'))
         obj.code = ApiClient.convertToType(data['code'], 'String');
+      if (data.hasOwnProperty('couponId'))
+        obj.couponId = ApiClient.convertToType(data['couponId'], 'String');
       if (data.hasOwnProperty('percentage'))
         obj.percentage = ApiClient.convertToType(data['percentage'], 'Number');
-      if (data.hasOwnProperty('promotionId'))
-        obj.promotionId = ApiClient.convertToType(data['promotionId'], 'String');
     }
     return obj;
   }
@@ -70,14 +70,14 @@
   exports.prototype.code = undefined;
 
   /**
+   * @member {String} couponId
+   */
+  exports.prototype.couponId = undefined;
+
+  /**
    * @member {Number} percentage
    */
   exports.prototype.percentage = undefined;
-
-  /**
-   * @member {String} promotionId
-   */
-  exports.prototype.promotionId = undefined;
 
 
   return exports;

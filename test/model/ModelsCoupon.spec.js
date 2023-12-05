@@ -46,16 +46,16 @@
         // expect(instance.code).to.be(expectedValueLiteral);
       });
 
+      it('should have the property couponId (base name: "couponId")', function() {
+        // TODO: update the code to test the property couponId
+        expect(instance).to.have.property('couponId');
+        // expect(instance.couponId).to.be(expectedValueLiteral);
+      });
+
       it('should have the property percentage (base name: "percentage")', function() {
         // TODO: update the code to test the property percentage
         expect(instance).to.have.property('percentage');
         // expect(instance.percentage).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property promotionId (base name: "promotionId")', function() {
-        // TODO: update the code to test the property promotionId
-        expect(instance).to.have.property('promotionId');
-        // expect(instance.promotionId).to.be(expectedValueLiteral);
       });
 
     });

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **String** |  | [optional] 
+**couponId** | **String** |  | [optional] 
 **percentage** | **Number** |  | [optional] 
-**promotionId** | **String** |  | [optional] 
 
 

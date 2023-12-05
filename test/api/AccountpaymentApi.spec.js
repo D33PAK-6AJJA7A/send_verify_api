@@ -97,6 +97,7 @@
           /*
           var xAccountApiKey = "xAccountApiKey_example";
           var body = new SendVerifyApi.ModelsPaymentOptions();
+          body.couponId = "";
           body.customerId = "";
           body.ipCount = "0";
           body.paymentMethodId = "";
@@ -174,10 +175,10 @@
               expect(data).to.be.a(SendVerifyApi.ModelsCoupon);
               expect(data.code).to.be.a('string');
               expect(data.code).to.be("");
+              expect(data.couponId).to.be.a('string');
+              expect(data.couponId).to.be("");
               expect(data.percentage).to.be.a('number');
               expect(data.percentage).to.be(0.0);
-              expect(data.promotionId).to.be.a('string');
-              expect(data.promotionId).to.be("");
             }
 
             done();

@@ -40,6 +40,12 @@
         expect(instance).to.be.a(SendVerifyApi.ModelsPaymentOptions);
       });
 
+      it('should have the property couponId (base name: "couponId")', function() {
+        // TODO: update the code to test the property couponId
+        expect(instance).to.have.property('couponId');
+        // expect(instance.couponId).to.be(expectedValueLiteral);
+      });
+
       it('should have the property customerId (base name: "customerId")', function() {
         // TODO: update the code to test the property customerId
         expect(instance).to.have.property('customerId');
