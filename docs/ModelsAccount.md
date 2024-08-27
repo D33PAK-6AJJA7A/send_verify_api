@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **created** | **Number** |  | [optional] 
 **creditsRemaining** | **Number** |  | [optional] 
 **id** | **Number** |  | [optional] 
+**isAdmin** | **Boolean** |  | [optional] 
 **isCanceled** | **Boolean** |  | [optional] 
 **isUpgraded** | **Boolean** |  | [optional] 
 **locked** | **Boolean** |  | [optional] 
