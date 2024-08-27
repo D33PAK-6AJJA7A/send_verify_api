@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**validationRouterGetAll**](AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
 [**validationRouterValidateEmailBulk**](AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
 [**validationRouterValidateEmailList**](AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
+[**validationRouterValidateListEmailBulk**](AccountvalidationApi.md#validationRouterValidateListEmailBulk) | **POST** /account/validation/list/bulk | 
 
 
 <a name="validationRouterCount"></a>
@@ -108,7 +109,7 @@ No authorization required
 
 <a name="validationRouterGetAll"></a>
 # **validationRouterGetAll**
-> [ModelsListCleaningJob] validationRouterGetAll(xAccountApiKey, opts)
+> [ModelsValidationJob] validationRouterGetAll(xAccountApiKey, opts)
 
 
 
@@ -149,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ModelsListCleaningJob]**](ModelsListCleaningJob.md)
+[**[ModelsValidationJob]**](ModelsValidationJob.md)
 
 ### Authorization
 
@@ -211,7 +212,7 @@ No authorization required
 
 <a name="validationRouterValidateEmailList"></a>
 # **validationRouterValidateEmailList**
-> ModelsCleanedList validationRouterValidateEmailList(xAccountApiKey, body)
+> ModelsValidatedEmailList validationRouterValidateEmailList(xAccountApiKey, body)
 
 
 
@@ -247,7 +248,56 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelsCleanedList**](ModelsCleanedList.md)
+[**ModelsValidatedEmailList**](ModelsValidatedEmailList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="validationRouterValidateListEmailBulk"></a>
+# **validationRouterValidateListEmailBulk**
+> ModelsBulkResponse validationRouterValidateListEmailBulk(xAccountApiKey, body)
+
+
+
+Validate Emails In File Asynchronously <br>
+
+### Example
+```javascript
+var SendVerifyApi = require('send_verify_api');
+
+var apiInstance = new SendVerifyApi.AccountvalidationApi();
+
+var xAccountApiKey = "xAccountApiKey_example"; // String | Account API Key
+
+var body = new SendVerifyApi.ModelsEmailList(); // ModelsEmailList | The email list to be sent for being validated
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.validationRouterValidateListEmailBulk(xAccountApiKey, body, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xAccountApiKey** | **String**| Account API Key | 
+ **body** | [**ModelsEmailList**](ModelsEmailList.md)| The email list to be sent for being validated | 
+
+### Return type
+
+[**ModelsBulkResponse**](ModelsBulkResponse.md)
 
 ### Authorization
 

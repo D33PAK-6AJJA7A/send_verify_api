@@ -95,21 +95,24 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var SendVerifyApi = require('send_verify_api');
 
-var api = new SendVerifyApi.AccountpaymentApi()
+var api = new SendVerifyApi.AccountadminApi()
 
 var xAccountApiKey = "xAccountApiKey_example"; // {String} Account API Key
 
-var body = new SendVerifyApi.ModelsCouponOptions(); // {ModelsCouponOptions} Coupon Code Options
+var email = "email_example"; // {String} email
 
+var opts = { 
+  'uid': "uid_example" // {String} firebase uid if you have
+};
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.paymentRouterApplyCouponToStripeCustomer(xAccountApiKey, body, callback);
+api.accountAdminRouterAssumeAccountGetToken(xAccountApiKey, email, opts, callback);
 
 ```
 
@@ -119,6 +122,10 @@ All URIs are relative to *https://api-stag.sendverify.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*SendVerifyApi.AccountadminApi* | [**accountAdminRouterAssumeAccountGetToken**](docs/AccountadminApi.md#accountAdminRouterAssumeAccountGetToken) | **GET** /account/admin/assume | 
+*SendVerifyApi.AccountmemberApi* | [**memberRouterDelete**](docs/AccountmemberApi.md#memberRouterDelete) | **DELETE** /account/member/{memberId} | 
+*SendVerifyApi.AccountmemberApi* | [**memberRouterGet**](docs/AccountmemberApi.md#memberRouterGet) | **GET** /account/member/{memberId} | 
+*SendVerifyApi.AccountmemberApi* | [**memberRouterGetAll**](docs/AccountmemberApi.md#memberRouterGetAll) | **GET** /account/member/ | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterApplyCouponToStripeCustomer**](docs/AccountpaymentApi.md#paymentRouterApplyCouponToStripeCustomer) | **POST** /account/payment/customer/coupon | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterCreateCustomerPortal**](docs/AccountpaymentApi.md#paymentRouterCreateCustomerPortal) | **POST** /account/payment/portal | 
 *SendVerifyApi.AccountpaymentApi* | [**paymentRouterCreatePaymentInvoice**](docs/AccountpaymentApi.md#paymentRouterCreatePaymentInvoice) | **POST** /account/payment/invoice | 
@@ -134,37 +141,52 @@ Class | Method | HTTP request | Description
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterGetAll**](docs/AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailBulk**](docs/AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailList**](docs/AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
+*SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateListEmailBulk**](docs/AccountvalidationApi.md#validationRouterValidateListEmailBulk) | **POST** /account/validation/list/bulk | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterCount**](docs/AccountwebhookApi.md#accountWebhookRouterCount) | **GET** /account/webhook/count | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterCreate**](docs/AccountwebhookApi.md#accountWebhookRouterCreate) | **POST** /account/webhook/ | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterDelete**](docs/AccountwebhookApi.md#accountWebhookRouterDelete) | **DELETE** /account/webhook/{webhookId} | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterGet**](docs/AccountwebhookApi.md#accountWebhookRouterGet) | **GET** /account/webhook/{webhookId} | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterGetAll**](docs/AccountwebhookApi.md#accountWebhookRouterGetAll) | **GET** /account/webhook/ | 
+*SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterUpdate**](docs/AccountwebhookApi.md#accountWebhookRouterUpdate) | **PUT** /account/webhook/{webhookId} | 
 *SendVerifyApi.AuthApi* | [**authRouterCreate**](docs/AuthApi.md#authRouterCreate) | **POST** /auth/create | 
 *SendVerifyApi.AuthApi* | [**authRouterGetAuthInfo**](docs/AuthApi.md#authRouterGetAuthInfo) | **POST** /auth/info | 
 *SendVerifyApi.AuthApi* | [**authRouterUpdateAuthInfo**](docs/AuthApi.md#authRouterUpdateAuthInfo) | **PUT** /auth/info | 
 *SendVerifyApi.ClusterApi* | [**clusterRouterDeleteItemFromCacheOfEveryNodeInCluster**](docs/ClusterApi.md#clusterRouterDeleteItemFromCacheOfEveryNodeInCluster) | **DELETE** /cluster/cache | 
 *SendVerifyApi.ClusterApi* | [**clusterRouterGetItemFromCacheOfSpecificNodeInCluster**](docs/ClusterApi.md#clusterRouterGetItemFromCacheOfSpecificNodeInCluster) | **DELETE** /cluster/cache/node | 
+*SendVerifyApi.XauthApi* | [**xAuthRouterAccedptSendpostValidationWebhookResult**](docs/XauthApi.md#xAuthRouterAccedptSendpostValidationWebhookResult) | **POST** /xauth/sendpost/webhook/{sendpostApiKey} | 
+*SendVerifyApi.XauthApi* | [**xAuthRouterCreateAccountViaAPI**](docs/XauthApi.md#xAuthRouterCreateAccountViaAPI) | **POST** /xauth/create | 
 
 
 ## Documentation for Models
 
  - [SendVerifyApi.ModelsAccount](docs/ModelsAccount.md)
+ - [SendVerifyApi.ModelsAccountWebhook](docs/ModelsAccountWebhook.md)
  - [SendVerifyApi.ModelsAuthInfo](docs/ModelsAuthInfo.md)
  - [SendVerifyApi.ModelsBillingPortalSession](docs/ModelsBillingPortalSession.md)
  - [SendVerifyApi.ModelsBulkResponse](docs/ModelsBulkResponse.md)
- - [SendVerifyApi.ModelsCleanedList](docs/ModelsCleanedList.md)
  - [SendVerifyApi.ModelsCountStat](docs/ModelsCountStat.md)
  - [SendVerifyApi.ModelsCountry](docs/ModelsCountry.md)
  - [SendVerifyApi.ModelsCoupon](docs/ModelsCoupon.md)
  - [SendVerifyApi.ModelsCouponOptions](docs/ModelsCouponOptions.md)
  - [SendVerifyApi.ModelsCreditsInfo](docs/ModelsCreditsInfo.md)
+ - [SendVerifyApi.ModelsDeleteResponse](docs/ModelsDeleteResponse.md)
  - [SendVerifyApi.ModelsEAccount](docs/ModelsEAccount.md)
  - [SendVerifyApi.ModelsEAccountMember](docs/ModelsEAccountMember.md)
+ - [SendVerifyApi.ModelsEMember](docs/ModelsEMember.md)
+ - [SendVerifyApi.ModelsEWebhook](docs/ModelsEWebhook.md)
  - [SendVerifyApi.ModelsEmailList](docs/ModelsEmailList.md)
  - [SendVerifyApi.ModelsJobStatus](docs/ModelsJobStatus.md)
- - [SendVerifyApi.ModelsListCleaningJob](docs/ModelsListCleaningJob.md)
  - [SendVerifyApi.ModelsMember](docs/ModelsMember.md)
  - [SendVerifyApi.ModelsPaymentAddress](docs/ModelsPaymentAddress.md)
  - [SendVerifyApi.ModelsPaymentOptions](docs/ModelsPaymentOptions.md)
  - [SendVerifyApi.ModelsPaymentStatus](docs/ModelsPaymentStatus.md)
  - [SendVerifyApi.ModelsPricing](docs/ModelsPricing.md)
- - [SendVerifyApi.ModelsSingleCleanedMail](docs/ModelsSingleCleanedMail.md)
+ - [SendVerifyApi.ModelsRAssumeAccount](docs/ModelsRAssumeAccount.md)
+ - [SendVerifyApi.ModelsResponse](docs/ModelsResponse.md)
+ - [SendVerifyApi.ModelsSingleValidatedEmail](docs/ModelsSingleValidatedEmail.md)
  - [SendVerifyApi.ModelsTaxDetails](docs/ModelsTaxDetails.md)
+ - [SendVerifyApi.ModelsValidatedEmailList](docs/ModelsValidatedEmailList.md)
+ - [SendVerifyApi.ModelsValidationJob](docs/ModelsValidationJob.md)
  - [SendVerifyApi.ModelsValidationReason](docs/ModelsValidationReason.md)
 
 
