@@ -58,8 +58,8 @@
         obj.created = ApiClient.convertToType(data['created'], 'Number');
       if (data.hasOwnProperty('id'))
         obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('processedBatches'))
-        obj.processedBatches = ApiClient.convertToType(data['processedBatches'], 'Number');
+      if (data.hasOwnProperty('processed'))
+        obj.processed = ApiClient.convertToType(data['processed'], 'Number');
       if (data.hasOwnProperty('resultInvalidPath'))
         obj.resultInvalidPath = ApiClient.convertToType(data['resultInvalidPath'], 'String');
       if (data.hasOwnProperty('resultPath'))
@@ -68,8 +68,8 @@
         obj.resultValidPath = ApiClient.convertToType(data['resultValidPath'], 'String');
       if (data.hasOwnProperty('status'))
         obj.status = ModelsJobStatus.constructFromObject(data['status']);
-      if (data.hasOwnProperty('totalBatches'))
-        obj.totalBatches = ApiClient.convertToType(data['totalBatches'], 'Number');
+      if (data.hasOwnProperty('total'))
+        obj.total = ApiClient.convertToType(data['total'], 'Number');
       if (data.hasOwnProperty('updated'))
         obj.updated = ApiClient.convertToType(data['updated'], 'Number');
     }
@@ -87,9 +87,9 @@
   exports.prototype.id = undefined;
 
   /**
-   * @member {Number} processedBatches
+   * @member {Number} processed
    */
-  exports.prototype.processedBatches = undefined;
+  exports.prototype.processed = undefined;
 
   /**
    * @member {String} resultInvalidPath
@@ -112,9 +112,9 @@
   exports.prototype.status = undefined;
 
   /**
-   * @member {Number} totalBatches
+   * @member {Number} total
    */
-  exports.prototype.totalBatches = undefined;
+  exports.prototype.total = undefined;
 
   /**
    * @member {Number} updated

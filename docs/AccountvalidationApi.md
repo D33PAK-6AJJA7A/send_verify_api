@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**validationRouterCount**](AccountvalidationApi.md#validationRouterCount) | **GET** /account/validation/count | 
 [**validationRouterDeductCredits**](AccountvalidationApi.md#validationRouterDeductCredits) | **POST** /account/validation/deduct | 
 [**validationRouterGetAll**](AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
+[**validationRouterGetResults**](AccountvalidationApi.md#validationRouterGetResults) | **GET** /account/validation/results | 
 [**validationRouterValidateEmailBulk**](AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
-[**validationRouterValidateEmailList**](AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
 [**validationRouterValidateListEmailBulk**](AccountvalidationApi.md#validationRouterValidateListEmailBulk) | **POST** /account/validation/list/bulk | 
 
 
@@ -161,6 +161,58 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="validationRouterGetResults"></a>
+# **validationRouterGetResults**
+> ModelsBulkResponse validationRouterGetResults(xAccountApiKey, opts)
+
+
+
+Get validation Results <br>
+
+### Example
+```javascript
+var SendVerifyApi = require('send_verify_api');
+
+var apiInstance = new SendVerifyApi.AccountvalidationApi();
+
+var xAccountApiKey = "xAccountApiKey_example"; // String | Account API Key
+
+var opts = { 
+  'jobId': 789, // Number | jobId
+  'tag': "tag_example" // String | tag
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.validationRouterGetResults(xAccountApiKey, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xAccountApiKey** | **String**| Account API Key | 
+ **jobId** | **Number**| jobId | [optional] 
+ **tag** | **String**| tag | [optional] 
+
+### Return type
+
+[**ModelsBulkResponse**](ModelsBulkResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="validationRouterValidateEmailBulk"></a>
 # **validationRouterValidateEmailBulk**
 > ModelsBulkResponse validationRouterValidateEmailBulk(fileinput, xAccountApiKey)
@@ -208,55 +260,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-<a name="validationRouterValidateEmailList"></a>
-# **validationRouterValidateEmailList**
-> ModelsValidatedEmailList validationRouterValidateEmailList(xAccountApiKey, body)
-
-
-
-Validate Email List Synchronously <br>
-
-### Example
-```javascript
-var SendVerifyApi = require('send_verify_api');
-
-var apiInstance = new SendVerifyApi.AccountvalidationApi();
-
-var xAccountApiKey = "xAccountApiKey_example"; // String | Account API Key
-
-var body = new SendVerifyApi.ModelsEmailList(); // ModelsEmailList | The email list to be sent for being validated
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.validationRouterValidateEmailList(xAccountApiKey, body, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xAccountApiKey** | **String**| Account API Key | 
- **body** | [**ModelsEmailList**](ModelsEmailList.md)| The email list to be sent for being validated | 
-
-### Return type
-
-[**ModelsValidatedEmailList**](ModelsValidatedEmailList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="validationRouterValidateListEmailBulk"></a>
