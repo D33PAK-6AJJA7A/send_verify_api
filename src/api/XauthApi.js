@@ -48,6 +48,59 @@
 
 
     /**
+     * Callback function to receive the result of the xAuthRouterAccedptSendpostValidationWebhookResult operation.
+     * @callback module:api/XauthApi~xAuthRouterAccedptSendpostValidationWebhookResultCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ModelsAccount} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Accedpt Sendpost validation webhook result <br>
+     * @param {Number} sendpostApiKey The sendpost subaccount api key of related sendverify account
+     * @param {module:model/ModelsEAccount} body The Account content
+     * @param {module:api/XauthApi~xAuthRouterAccedptSendpostValidationWebhookResultCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ModelsAccount}
+     */
+    this.xAuthRouterAccedptSendpostValidationWebhookResult = function(sendpostApiKey, body, callback) {
+      var postBody = body;
+
+      // verify the required parameter 'sendpostApiKey' is set
+      if (sendpostApiKey === undefined || sendpostApiKey === null) {
+        throw new Error("Missing the required parameter 'sendpostApiKey' when calling xAuthRouterAccedptSendpostValidationWebhookResult");
+      }
+
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling xAuthRouterAccedptSendpostValidationWebhookResult");
+      }
+
+
+      var pathParams = {
+        'sendpostApiKey': sendpostApiKey
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ModelsAccount;
+
+      return this.apiClient.callApi(
+        '/xauth/sendpost/webhook/{sendpostApiKey}', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the xAuthRouterCreateAccountViaAPI operation.
      * @callback module:api/XauthApi~xAuthRouterCreateAccountViaAPICallback
      * @param {String} error Error message, if any.

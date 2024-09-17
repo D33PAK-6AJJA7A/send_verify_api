@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ModelsAccount', 'model/ModelsAccountWebhook', 'model/ModelsAuthInfo', 'model/ModelsBillingPortalSession', 'model/ModelsBulkResponse', 'model/ModelsCountStat', 'model/ModelsCountry', 'model/ModelsCoupon', 'model/ModelsCouponOptions', 'model/ModelsCreditsInfo', 'model/ModelsDeleteResponse', 'model/ModelsEAccount', 'model/ModelsEAccountMember', 'model/ModelsEMember', 'model/ModelsEWebhook', 'model/ModelsEmailList', 'model/ModelsJobStatus', 'model/ModelsMember', 'model/ModelsPaymentAddress', 'model/ModelsPaymentOptions', 'model/ModelsPaymentStatus', 'model/ModelsPricing', 'model/ModelsRAssumeAccount', 'model/ModelsResponse', 'model/ModelsSingleValidatedEmail', 'model/ModelsTaxDetails', 'model/ModelsValidatedEmailList', 'model/ModelsValidationJob', 'model/ModelsValidationReason', 'api/AccountadminApi', 'api/AccountmemberApi', 'api/AccountpaymentApi', 'api/AccountsettingApi', 'api/AccountvalidationApi', 'api/AccountwebhookApi', 'api/AuthApi', 'api/ClusterApi', 'api/XauthApi'], factory);
+    define(['ApiClient', 'model/ModelsAccount', 'model/ModelsAccountWebhook', 'model/ModelsAuthInfo', 'model/ModelsBillingPortalSession', 'model/ModelsBulkResponse', 'model/ModelsCountStat', 'model/ModelsCountry', 'model/ModelsCoupon', 'model/ModelsCouponOptions', 'model/ModelsCreditsInfo', 'model/ModelsDeleteResponse', 'model/ModelsEAccount', 'model/ModelsEAccountMember', 'model/ModelsEMember', 'model/ModelsEWebhook', 'model/ModelsEmailList', 'model/ModelsJobStatus', 'model/ModelsMember', 'model/ModelsPaymentAddress', 'model/ModelsPaymentOptions', 'model/ModelsPaymentStatus', 'model/ModelsPricing', 'model/ModelsRAssumeAccount', 'model/ModelsResponse', 'model/ModelsTaxDetails', 'model/ModelsValidationJob', 'api/AccountadminApi', 'api/AccountmemberApi', 'api/AccountpaymentApi', 'api/AccountsettingApi', 'api/AccountvalidationApi', 'api/AccountwebhookApi', 'api/AuthApi', 'api/ClusterApi', 'api/XauthApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ModelsAccount'), require('./model/ModelsAccountWebhook'), require('./model/ModelsAuthInfo'), require('./model/ModelsBillingPortalSession'), require('./model/ModelsBulkResponse'), require('./model/ModelsCountStat'), require('./model/ModelsCountry'), require('./model/ModelsCoupon'), require('./model/ModelsCouponOptions'), require('./model/ModelsCreditsInfo'), require('./model/ModelsDeleteResponse'), require('./model/ModelsEAccount'), require('./model/ModelsEAccountMember'), require('./model/ModelsEMember'), require('./model/ModelsEWebhook'), require('./model/ModelsEmailList'), require('./model/ModelsJobStatus'), require('./model/ModelsMember'), require('./model/ModelsPaymentAddress'), require('./model/ModelsPaymentOptions'), require('./model/ModelsPaymentStatus'), require('./model/ModelsPricing'), require('./model/ModelsRAssumeAccount'), require('./model/ModelsResponse'), require('./model/ModelsSingleValidatedEmail'), require('./model/ModelsTaxDetails'), require('./model/ModelsValidatedEmailList'), require('./model/ModelsValidationJob'), require('./model/ModelsValidationReason'), require('./api/AccountadminApi'), require('./api/AccountmemberApi'), require('./api/AccountpaymentApi'), require('./api/AccountsettingApi'), require('./api/AccountvalidationApi'), require('./api/AccountwebhookApi'), require('./api/AuthApi'), require('./api/ClusterApi'), require('./api/XauthApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ModelsAccount'), require('./model/ModelsAccountWebhook'), require('./model/ModelsAuthInfo'), require('./model/ModelsBillingPortalSession'), require('./model/ModelsBulkResponse'), require('./model/ModelsCountStat'), require('./model/ModelsCountry'), require('./model/ModelsCoupon'), require('./model/ModelsCouponOptions'), require('./model/ModelsCreditsInfo'), require('./model/ModelsDeleteResponse'), require('./model/ModelsEAccount'), require('./model/ModelsEAccountMember'), require('./model/ModelsEMember'), require('./model/ModelsEWebhook'), require('./model/ModelsEmailList'), require('./model/ModelsJobStatus'), require('./model/ModelsMember'), require('./model/ModelsPaymentAddress'), require('./model/ModelsPaymentOptions'), require('./model/ModelsPaymentStatus'), require('./model/ModelsPricing'), require('./model/ModelsRAssumeAccount'), require('./model/ModelsResponse'), require('./model/ModelsTaxDetails'), require('./model/ModelsValidationJob'), require('./api/AccountadminApi'), require('./api/AccountmemberApi'), require('./api/AccountpaymentApi'), require('./api/AccountsettingApi'), require('./api/AccountvalidationApi'), require('./api/AccountwebhookApi'), require('./api/AuthApi'), require('./api/ClusterApi'), require('./api/XauthApi'));
   }
-}(function(ApiClient, ModelsAccount, ModelsAccountWebhook, ModelsAuthInfo, ModelsBillingPortalSession, ModelsBulkResponse, ModelsCountStat, ModelsCountry, ModelsCoupon, ModelsCouponOptions, ModelsCreditsInfo, ModelsDeleteResponse, ModelsEAccount, ModelsEAccountMember, ModelsEMember, ModelsEWebhook, ModelsEmailList, ModelsJobStatus, ModelsMember, ModelsPaymentAddress, ModelsPaymentOptions, ModelsPaymentStatus, ModelsPricing, ModelsRAssumeAccount, ModelsResponse, ModelsSingleValidatedEmail, ModelsTaxDetails, ModelsValidatedEmailList, ModelsValidationJob, ModelsValidationReason, AccountadminApi, AccountmemberApi, AccountpaymentApi, AccountsettingApi, AccountvalidationApi, AccountwebhookApi, AuthApi, ClusterApi, XauthApi) {
+}(function(ApiClient, ModelsAccount, ModelsAccountWebhook, ModelsAuthInfo, ModelsBillingPortalSession, ModelsBulkResponse, ModelsCountStat, ModelsCountry, ModelsCoupon, ModelsCouponOptions, ModelsCreditsInfo, ModelsDeleteResponse, ModelsEAccount, ModelsEAccountMember, ModelsEMember, ModelsEWebhook, ModelsEmailList, ModelsJobStatus, ModelsMember, ModelsPaymentAddress, ModelsPaymentOptions, ModelsPaymentStatus, ModelsPricing, ModelsRAssumeAccount, ModelsResponse, ModelsTaxDetails, ModelsValidationJob, AccountadminApi, AccountmemberApi, AccountpaymentApi, AccountsettingApi, AccountvalidationApi, AccountwebhookApi, AuthApi, ClusterApi, XauthApi) {
   'use strict';
 
   /**
@@ -182,30 +182,15 @@
      */
     ModelsResponse: ModelsResponse,
     /**
-     * The ModelsSingleValidatedEmail model constructor.
-     * @property {module:model/ModelsSingleValidatedEmail}
-     */
-    ModelsSingleValidatedEmail: ModelsSingleValidatedEmail,
-    /**
      * The ModelsTaxDetails model constructor.
      * @property {module:model/ModelsTaxDetails}
      */
     ModelsTaxDetails: ModelsTaxDetails,
     /**
-     * The ModelsValidatedEmailList model constructor.
-     * @property {module:model/ModelsValidatedEmailList}
-     */
-    ModelsValidatedEmailList: ModelsValidatedEmailList,
-    /**
      * The ModelsValidationJob model constructor.
      * @property {module:model/ModelsValidationJob}
      */
     ModelsValidationJob: ModelsValidationJob,
-    /**
-     * The ModelsValidationReason model constructor.
-     * @property {module:model/ModelsValidationReason}
-     */
-    ModelsValidationReason: ModelsValidationReason,
     /**
      * The AccountadminApi service constructor.
      * @property {module:api/AccountadminApi}

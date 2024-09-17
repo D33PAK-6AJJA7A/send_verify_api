@@ -54,6 +54,8 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+      if (data.hasOwnProperty('creditLimit'))
+        obj.creditLimit = ApiClient.convertToType(data['creditLimit'], 'Number');
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
       if (data.hasOwnProperty('jwtToken'))
@@ -67,6 +69,11 @@
     }
     return obj;
   }
+
+  /**
+   * @member {Number} creditLimit
+   */
+  exports.prototype.creditLimit = undefined;
 
   /**
    * @member {String} email

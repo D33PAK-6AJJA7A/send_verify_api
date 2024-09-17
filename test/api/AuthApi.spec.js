@@ -40,6 +40,7 @@
           // TODO: uncomment, update parameter values for authRouterCreate call and complete the assertions
           /*
           var body = new SendVerifyApi.ModelsEAccount();
+          body.creditLimit = "0";
           body.email = "";
           body.jwtToken = "";
           body.signupMode = "";
@@ -91,6 +92,7 @@
           // TODO: uncomment, update parameter values for authRouterGetAuthInfo call and complete the assertions
           /*
           var body = new SendVerifyApi.ModelsEAccount();
+          body.creditLimit = "0";
           body.email = "";
           body.jwtToken = "";
           body.signupMode = "";

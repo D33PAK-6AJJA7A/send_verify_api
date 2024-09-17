@@ -105,8 +105,8 @@
               expect(data.created).to.be("0");
               expect(data.id).to.be.a('number');
               expect(data.id).to.be("0");
-              expect(data.processedBatches).to.be.a('number');
-              expect(data.processedBatches).to.be("0");
+              expect(data.processed).to.be.a('number');
+              expect(data.processed).to.be("0");
               expect(data.resultInvalidPath).to.be.a('string');
               expect(data.resultInvalidPath).to.be("");
               expect(data.resultPath).to.be.a('string');
@@ -114,11 +114,39 @@
               expect(data.resultValidPath).to.be.a('string');
               expect(data.resultValidPath).to.be("");
               expect(data.status).to.be.a(SendVerifyApi.ModelsJobStatus);
-                  expect(data.totalBatches).to.be.a('number');
-              expect(data.totalBatches).to.be("0");
+                  expect(data.total).to.be.a('number');
+              expect(data.total).to.be("0");
               expect(data.updated).to.be.a('number');
               expect(data.updated).to.be("0");
             }
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
+      describe('validationRouterGetResults', function() {
+        it('should call validationRouterGetResults successfully', function(done) {
+          // TODO: uncomment, update parameter values for validationRouterGetResults call and complete the assertions
+          /*
+          var xAccountApiKey = "xAccountApiKey_example";
+          var opts = {};
+          opts.jobId = 789;
+          opts.tag = "tag_example";
+
+          instance.validationRouterGetResults(xAccountApiKey, opts, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(SendVerifyApi.ModelsBulkResponse);
+            expect(data.jobId).to.be.a('number');
+            expect(data.jobId).to.be("0");
+            expect(data.message).to.be.a('string');
+            expect(data.message).to.be("");
 
             done();
           });
@@ -145,66 +173,6 @@
             expect(data.jobId).to.be("0");
             expect(data.message).to.be.a('string');
             expect(data.message).to.be("");
-
-            done();
-          });
-          */
-          // TODO: uncomment and complete method invocation above, then delete this line and the next:
-          done();
-        });
-      });
-      describe('validationRouterValidateEmailList', function() {
-        it('should call validationRouterValidateEmailList successfully', function(done) {
-          // TODO: uncomment, update parameter values for validationRouterValidateEmailList call and complete the assertions
-          /*
-          var xAccountApiKey = "xAccountApiKey_example";
-          var body = new SendVerifyApi.ModelsEmailList();
-          body.emailIds = [""];
-
-          instance.validationRouterValidateEmailList(xAccountApiKey, body, function(error, data, response) {
-            if (error) {
-              done(error);
-              return;
-            }
-            // TODO: update response assertions
-            expect(data).to.be.a(SendVerifyApi.ModelsValidatedEmailList);
-            {
-              let dataCtr = data.detailedResponse;
-              expect(dataCtr).to.be.an(Array);
-              expect(dataCtr).to.not.be.empty();
-              for (let p in dataCtr) {
-                let data = dataCtr[p];
-                expect(data).to.be.a(SendVerifyApi.ModelsSingleValidatedEmail);
-                expect(data.email).to.be.a('string');
-                expect(data.email).to.be("");
-                expect(data.error).to.be.a('string');
-                expect(data.error).to.be("");
-                expect(data.reason).to.be.a(SendVerifyApi.ModelsValidationReason);
-                    expect(data.valid).to.be.a('boolean');
-                expect(data.valid).to.be(false);
-
-                      }
-            }
-            {
-              let dataCtr = data.invalid;
-              expect(dataCtr).to.be.an(Array);
-              expect(dataCtr).to.not.be.empty();
-              for (let p in dataCtr) {
-                let data = dataCtr[p];
-                expect(data).to.be.a('string');
-                expect(data).to.be("");
-              }
-            }
-            {
-              let dataCtr = data.valid;
-              expect(dataCtr).to.be.an(Array);
-              expect(dataCtr).to.not.be.empty();
-              for (let p in dataCtr) {
-                let data = dataCtr[p];
-                expect(data).to.be.a('string');
-                expect(data).to.be("");
-              }
-            }
 
             done();
           });
