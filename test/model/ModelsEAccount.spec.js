@@ -40,6 +40,12 @@
         expect(instance).to.be.a(SendVerifyApi.ModelsEAccount);
       });
 
+      it('should have the property creditLimit (base name: "creditLimit")', function() {
+        // TODO: update the code to test the property creditLimit
+        expect(instance).to.have.property('creditLimit');
+        // expect(instance.creditLimit).to.be(expectedValueLiteral);
+      });
+
       it('should have the property email (base name: "email")', function() {
         // TODO: update the code to test the property email
         expect(instance).to.have.property('email');

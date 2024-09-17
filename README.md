@@ -139,8 +139,8 @@ Class | Method | HTTP request | Description
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterCount**](docs/AccountvalidationApi.md#validationRouterCount) | **GET** /account/validation/count | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterDeductCredits**](docs/AccountvalidationApi.md#validationRouterDeductCredits) | **POST** /account/validation/deduct | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterGetAll**](docs/AccountvalidationApi.md#validationRouterGetAll) | **GET** /account/validation/ | 
+*SendVerifyApi.AccountvalidationApi* | [**validationRouterGetResults**](docs/AccountvalidationApi.md#validationRouterGetResults) | **GET** /account/validation/results | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailBulk**](docs/AccountvalidationApi.md#validationRouterValidateEmailBulk) | **POST** /account/validation/bulk | 
-*SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateEmailList**](docs/AccountvalidationApi.md#validationRouterValidateEmailList) | **POST** /account/validation/ | 
 *SendVerifyApi.AccountvalidationApi* | [**validationRouterValidateListEmailBulk**](docs/AccountvalidationApi.md#validationRouterValidateListEmailBulk) | **POST** /account/validation/list/bulk | 
 *SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterCount**](docs/AccountwebhookApi.md#accountWebhookRouterCount) | **GET** /account/webhook/count | 
 *SendVerifyApi.AccountwebhookApi* | [**accountWebhookRouterCreate**](docs/AccountwebhookApi.md#accountWebhookRouterCreate) | **POST** /account/webhook/ | 
@@ -183,11 +183,8 @@ Class | Method | HTTP request | Description
  - [SendVerifyApi.ModelsPricing](docs/ModelsPricing.md)
  - [SendVerifyApi.ModelsRAssumeAccount](docs/ModelsRAssumeAccount.md)
  - [SendVerifyApi.ModelsResponse](docs/ModelsResponse.md)
- - [SendVerifyApi.ModelsSingleValidatedEmail](docs/ModelsSingleValidatedEmail.md)
  - [SendVerifyApi.ModelsTaxDetails](docs/ModelsTaxDetails.md)
- - [SendVerifyApi.ModelsValidatedEmailList](docs/ModelsValidatedEmailList.md)
  - [SendVerifyApi.ModelsValidationJob](docs/ModelsValidationJob.md)
- - [SendVerifyApi.ModelsValidationReason](docs/ModelsValidationReason.md)
 
 
 ## Documentation for Authorization
