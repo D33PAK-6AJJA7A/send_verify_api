@@ -161,8 +161,9 @@
           /*
           var fileinput = "/path/to/file.txt";
           var xAccountApiKey = "xAccountApiKey_example";
+          var memberEmail = "memberEmail_example";
 
-          instance.validationRouterValidateEmailBulk(fileinput, xAccountApiKey, function(error, data, response) {
+          instance.validationRouterValidateEmailBulk(fileinput, xAccountApiKey, memberEmail, function(error, data, response) {
             if (error) {
               done(error);
               return;
