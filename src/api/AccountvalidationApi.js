@@ -266,10 +266,11 @@
      * Validate Emails In File Asynchronously
      * @param {File} fileinput CSV whose emails need to be validated
      * @param {String} xAccountApiKey Account API Key
+     * @param {String} memberEmail Member Email
      * @param {module:api/AccountvalidationApi~validationRouterValidateEmailBulkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ModelsBulkResponse}
      */
-    this.validationRouterValidateEmailBulk = function(fileinput, xAccountApiKey, callback) {
+    this.validationRouterValidateEmailBulk = function(fileinput, xAccountApiKey, memberEmail, callback) {
       var postBody = null;
 
       // verify the required parameter 'fileinput' is set
@@ -282,10 +283,15 @@
         throw new Error("Missing the required parameter 'xAccountApiKey' when calling validationRouterValidateEmailBulk");
       }
 
+      // verify the required parameter 'memberEmail' is set
+      if (memberEmail === undefined || memberEmail === null) {
+        throw new Error("Missing the required parameter 'memberEmail' when calling validationRouterValidateEmailBulk");
+      }
 
       var pathParams = {
       };
       var queryParams = {
+        'memberEmail': memberEmail,
       };
       var collectionQueryParams = {
       };
